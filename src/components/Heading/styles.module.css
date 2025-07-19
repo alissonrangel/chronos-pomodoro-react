@@ -1,0 +1,14 @@
+.heading {
+  /* background-color: brown; */
+  color: black;
+  /* margin: 3.2rem 0; */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
+.cyano {
+  color: cyan;
+}
