@@ -7,7 +7,7 @@ type HeadingProps = {
 };
 
 export function Heading({ children, attr, attr2 }: HeadingProps) {
-  console.log(attr);
+  console.log(attr, attr2);
 
   //const { children, attr, attr2 } = props;
 
@@ -16,7 +16,9 @@ export function Heading({ children, attr, attr2 }: HeadingProps) {
   return (
     <>
       {/* <h1 className={classes}>{props.children}</h1> */}
-      <h1 className={classes}>{children}</h1>
+      <h1 className={classes} id="teste">
+        {children}
+      </h1>
     </>
   );
 }

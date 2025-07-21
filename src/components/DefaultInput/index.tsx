@@ -2,15 +2,17 @@ import type React from 'react';
 import styles from './styles.module.css';
 
 type DefaultInputProps = {
-  children: React.ReactNode;
+  // children: React.ReactNode;
+  labelText?: string;
 } & React.ComponentProps<'input'>;
 
-export function DefaultInput({ children, id, type, name }: DefaultInputProps) {
+export function DefaultInput({ labelText, ...rest }: DefaultInputProps) {
+  const { id } = { ...rest };
   return (
     <>
       <div className="formRow">
-        <label htmlFor={id}>{children}</label>
-        <input type={type} name={name} id={id} />
+        {labelText && <label htmlFor={id}>{labelText}</label>}
+        <input className={styles.input} {...rest} />
       </div>
     </>
   );

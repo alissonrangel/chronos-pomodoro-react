@@ -2,17 +2,19 @@
  * Componente do React com PascalCase
  * Ex.:ExemploDeComponente
  */
-import { Fragment } from 'react/jsx-runtime';
-import { Camera } from 'lucide-react';
-import { Container } from './components/Container';
-import { Heading } from './components/Heading';
-import { Logo } from './components/Logo';
+import { Fragment } from "react/jsx-runtime";
+import { Camera, PlayCircleIcon, StopCircleIcon } from "lucide-react";
+import { Container } from "./components/Container";
+import { Heading } from "./components/Heading";
+import { Logo } from "./components/Logo";
 
-import './styles/theme.css';
-import './styles/global.css';
-import { Menu } from './components/Menu';
-import { CountDown } from './components/CountDown';
-import { DefaultInput } from './components/DefaultInput';
+import "./styles/theme.css";
+import "./styles/global.css";
+import { Menu } from "./components/Menu";
+import { CountDown } from "./components/CountDown";
+import { DefaultInput } from "./components/DefaultInput";
+import { Cycles } from "./components/Cycles";
+import { DefaultButton } from "./components/DefaultButton";
 
 export function App() {
   return (
@@ -53,27 +55,36 @@ export function App() {
       </Container>
       <Container>
         <form className="form" action="">
-          <DefaultInput id="task" name="task" type="text">
-            Input
-          </DefaultInput>
+          <DefaultInput
+            id="task"
+            name="task"
+            type="text"
+            title="título"
+            labelText="Input"
+            placeholder="Digite algo"
+            // disabled
+            // defaultValue="Valor Preenchido"
+          ></DefaultInput>
           <div className="formRow">
             <p>Lorem, ipsum dolor sit amet.</p>
           </div>
           <div className="formRow">
-            <p>Ciclos</p>
-            <p>0 0 0 0 0 0 0</p>
+            <Cycles />
           </div>
           <div className="formRow">
-            <button>Enviar</button>
+            <DefaultButton icon={<PlayCircleIcon />} color="green" />
+          </div>
+          <div className="formRow">
+            <DefaultButton icon={<StopCircleIcon />} color="red" />
           </div>
         </form>
       </Container>
-      <Container>
+      {/* <Container>
         <Heading>FORM</Heading>
       </Container>
       <Container>
         <Heading>FOOTER</Heading>
-      </Container>
+      </Container> */}
       <Heading attr={123} attr2="String">
         Olá Children
         <button>
