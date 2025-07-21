@@ -148,7 +148,12 @@ export default tseslint.config([
 
 - CSS Modules: CSS Modules - clinyong - Visual Studio Code extension for CSS
   Modules
+
   - Extension for CSS Modules, which supports: Autocomplete and Go to definition
+
+- Om Theme (A Darker Dracula Theme)
+
+- Material Icon Thme
 
 ## Arquivos e pastas do projeto
 
@@ -162,4 +167,5 @@ export default tseslint.config([
 
 ## Paradas
 
-- Parei no início da aula 31. Criando o componente de footer (rodapé) 20/07/2025
+- Parei no início da aula 36. useState DEVE usar funções puras (sem efeito
+  colateral) 21/07/2025

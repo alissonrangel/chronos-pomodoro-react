@@ -15,35 +15,51 @@ import { CountDown } from "./components/CountDown";
 import { DefaultInput } from "./components/DefaultInput";
 import { Cycles } from "./components/Cycles";
 import { DefaultButton } from "./components/DefaultButton";
+import { Footer } from "./components/Footer";
+import { useState } from "react";
 
 export function App() {
+  /**
+   * Eu quero que todos o comps que usarem numero saibam as mudanças em seu valor
+   */
+  //let numero = 0;
+  // sempre que usar useState, não vou usar atribuição diretamente
+  // o React passa a monitorar a variável
+
+  //const [numero, setNumero] = useState(0);
+  const [numero, setNumero] = useState(() => {
+    // se for pesado de inicializar
+    console.log("lazy inicialization");
+    return 0;
+  });
+
+  //functions com on ele chama de handle
+  function handleClick() {
+    // const span = document.getElementById("numero");
+    // if (!span) {
+    //   return;
+    // }
+    // numero += 1; // no console muda, mas
+    // span.innerText = "Número " + numero.toString();
+    // console.log(numero, Date.now());
+
+    //setNumero(numero + 1); espera renderizar para alterar o valor, se for usado várias vezes só vai funcionar a primeira vez
+
+    //sempre que eu depender do valor anterior da variável, eu posso usar prevState no setNumero
+    setNumero(prevState => prevState + 1);
+    setNumero(prevState => prevState + 1);
+    setNumero(prevState => prevState + 1);
+    // soma de 3 em 3
+  }
+
   return (
     // usa parênteses quando tem mais de uma linha
     // return é o que vai ser exibido na página
     <Fragment>
-      {/* React Fragment, elemento Pai */}
-      {/* <div className='container'>
-        <div className='content'>
-          <section>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore
-            consequuntur tempore architecto molestias quasi quam? Neque unde
-            perspiciatis modi deleniti laboriosam, animi omnis, dolorem minima
-            ut nulla deserunt asperiores pariatur.
-          </section>
-        </div>
-      </div>
-      <div className='container-fluid'>
-        <div className='container'>
-          <div className='content'>
-            <section>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore
-              consequuntur tempore architecto molestias quasi quam? Neque unde
-              perspiciatis modi deleniti laboriosam, animi omnis, dolorem minima
-              ut nulla deserunt asperiores pariatur.
-            </section>
-          </div>
-        </div>
-      </div> */}
+      <Heading attr={numero} attr2="numero">
+        <span id="numero">Número: {numero}</span>
+      </Heading>
+      <button onClick={handleClick}>Aumenta</button>
       <Container>
         <Logo />
       </Container>
@@ -60,7 +76,7 @@ export function App() {
             name="task"
             type="text"
             title="título"
-            labelText="Input"
+            labelText="task"
             placeholder="Digite algo"
             // disabled
             // defaultValue="Valor Preenchido"
@@ -79,26 +95,9 @@ export function App() {
           </div>
         </form>
       </Container>
-      {/* <Container>
-        <Heading>FORM</Heading>
-      </Container>
       <Container>
-        <Heading>FOOTER</Heading>
-      </Container> */}
-      <Heading attr={123} attr2="String">
-        Olá Children
-        <button>
-          <Camera color="green" size={48} />
-        </button>
-      </Heading>
-      <h1>Olá App 2!</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae laborum
-        nihil soluta, illum cum, maiores dolor facilis quas, sequi modi suscipit
-        illo ex a nobis libero velit nulla ullam molestias. Possimus facilis
-        dicta
-      </p>
-      {/* <ChronosHome /> */}
+        <Footer href="www.google.com" />
+      </Container>
     </Fragment>
   );
 }
