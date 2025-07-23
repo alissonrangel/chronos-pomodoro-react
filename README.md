@@ -167,5 +167,5 @@ export default tseslint.config([
 
 ## Paradas
 
-- Parei no início da aula 36. useState DEVE usar funções puras (sem efeito
-  colateral) 21/07/2025
+- Parei no início da aula 41. Definindo os models (modelos) da aplicação
+  TaskModel e TaskStateModel 23/07/2025

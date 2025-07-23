@@ -1,13 +1,13 @@
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
 type HeadingProps = {
   children: React.ReactNode;
-  attr: number;
-  attr2: string;
+  // attr: number;
+  // attr2: string;
 };
 
-export function Heading({ children, attr, attr2 }: HeadingProps) {
-  console.log(attr, attr2);
+export function Heading({ children }: HeadingProps) {
+  //console.log(attr, attr2);
 
   //const { children, attr, attr2 } = props;
 
