@@ -2,17 +2,34 @@ import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 import { Cycles } from "../Cycles";
 import { DefaultButton } from "../DefaultButton";
 import { DefaultInput } from "../DefaultInput";
+import type { HomeProps } from "../../pages/Home";
 
-// type MainFormProps = {
-//   children: React.ReactNode;
-//   attr: number;
-//   attr2: string;
-// };
+type MainFormProps = {} & HomeProps;
 
-export function MainForm() {
+export function MainForm(props: MainFormProps) {
+  console.log("MainForm", props);
+
+  function handleClick() {
+    props.setState(prevState => {
+      return {
+        ...prevState,
+        config: {
+          ...prevState.config,
+          workTime: 34,
+        },
+        formattedSecondsRemaining: "22:30",
+      };
+    });
+  }
+
   return (
     <>
       <form className="form" action="">
+        <div>
+          <button type="button" onClick={handleClick}>
+            Clicar
+          </button>
+        </div>
         <DefaultInput
           id="task"
           name="task"
@@ -24,7 +41,7 @@ export function MainForm() {
           // defaultValue="Valor Preenchido"
         ></DefaultInput>
         <div className="formRow">
-          <p>Lorem, ipsum dolor sit amet.</p>
+          <p>Próximo intervalo é de {props.state.config.workTime} min</p>
         </div>
         <div className="formRow">
           <Cycles />

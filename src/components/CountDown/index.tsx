@@ -1,4 +1,5 @@
-import styles from './styles.module.css';
+import type { HomeProps } from "../../pages/Home";
+import styles from "./styles.module.css";
 
 // type LogoProps = {
 //   children: React.ReactNode;
@@ -6,11 +7,15 @@ import styles from './styles.module.css';
 //   attr2: string;
 // };
 
-export function CountDown() {
+type CountDownProps = {} & HomeProps;
+
+export function CountDown(props: CountDownProps) {
   return (
     <>
       {/* <h1 className={classes}>{props.children}</h1> */}
-      <div className={styles.container}>00:00</div>
+      <div className={styles.container}>
+        {props.state.formattedSecondsRemaining}
+      </div>
     </>
   );
 }

@@ -19,9 +19,28 @@ import "./styles/global.css";
 // import { useState } from "react";
 // import { MainForm } from "./components/MainForm";
 import { Home } from "./pages/Home";
-import { AboutPomodoro } from "./pages/AboutPomodoro";
+//import { AboutPomodoro } from "./pages/AboutPomodoro";
+import { useState } from "react";
+import type { TaskStateModel } from "./models/TaskStateModel";
+
+const initialState: TaskStateModel = {
+  tasks: [],
+  secondsRemaining: 0,
+  formattedSecondsRemaining: "23:34",
+  activeTask: null,
+  currentCycle: 0,
+  config: {
+    workTime: 25,
+    longBreakTime: 15,
+    shortBreakTime: 5,
+  },
+};
 
 export function App() {
+  const [state, setState] = useState(initialState);
+
+  console.log("APP", state);
+
   /**
    * Eu quero que todos o comps que usarem numero saibam as mudanças em seu valor
    */
@@ -80,7 +99,7 @@ export function App() {
   //   </Fragment>
   // );
 
-  return <AboutPomodoro />;
+  return <Home state={state} setState={setState} />;
 }
 //export default App;
 //export { App };
