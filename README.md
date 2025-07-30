@@ -162,9 +162,8 @@ export default tseslint.config([
 
 ## Revisão
 
-- Revisei até aula 13 - Importando e usando arquivos de CSS Modules com escopo
-  de componente
+- Revisei até aula 05 - Entenda a técnica de Pomodoro - 30/07/2025
 
 ## Paradas
 
-- Parei no início da aula 45. O conceito de prop driling 28/07/2025
+- Parei no início da aula 48. ContextAPI - useContext + useState ...

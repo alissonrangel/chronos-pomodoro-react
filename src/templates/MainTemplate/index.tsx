@@ -11,6 +11,7 @@ export function MainTemplate({ children }: MainTemplateProps) {
   return (
     // usa parênteses quando tem mais de uma linha
     // return é o que vai ser exibido na página
+    //uso nos pages
     <>
       <Container>
         <Logo />
