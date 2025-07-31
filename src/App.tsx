@@ -22,7 +22,7 @@ import { Home } from "./pages/Home";
 //import { AboutPomodoro } from "./pages/AboutPomodoro";
 import { useState } from "react";
 import type { TaskStateModel } from "./models/TaskStateModel";
-import TaskContextProvider from "./contexts/TaskContext";
+import TaskContextProvider from "./contexts/TaskContext/TaskContextProvider";
 
 const initialState: TaskStateModel = {
   tasks: [],
@@ -39,7 +39,6 @@ const initialState: TaskStateModel = {
 
 export function App() {
   const [state, setState] = useState(initialState);
-
   console.log("APP", state);
 
   /**
@@ -101,9 +100,14 @@ export function App() {
   // );
 
   // return (
-  //   <TaskContext.Provider value={{ outraCoisa: "123" }}>
+  //   <TaskContext0.Provider value={{ outraCoisa: "123" }}>
   //     <Home state={state} setState={setState} /> //prop drilling
-  //   </TaskContext.Provider>
+  //   </TaskContext0.Provider>
+  // );
+  // return (
+  //   <TaskContext2.Provider value={{ chave: "valor" }}>
+  //     <Home state={state} setState={setState} /> //prop drilling
+  //   </TaskContext2.Provider>
   // );
   return (
     <TaskContextProvider>

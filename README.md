@@ -162,8 +162,9 @@ export default tseslint.config([
 
 ## Revisão
 
-- Revisei até aula 05 - Entenda a técnica de Pomodoro - 30/07/2025
+- Revisei até aula 10 - Entenda a técnica de Pomodoro - 31/07/2025
 
 ## Paradas
 
-- Parei no início da aula 48. ContextAPI - useContext + useState ...
+- Parei no início da aula 50. Capturando o evento submit do formulário (onSubmit
+  com preventDefault)

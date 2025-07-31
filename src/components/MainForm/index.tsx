@@ -3,21 +3,37 @@ import { Cycles } from "../Cycles";
 import { DefaultButton } from "../DefaultButton";
 import { DefaultInput } from "../DefaultInput";
 import type { HomeProps } from "../../pages/Home";
+import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 
 type MainFormProps = {} & HomeProps;
 
 export function MainForm(props: MainFormProps) {
   console.log("MainForm", props);
 
+  const { setState } = useTaskContext();
+
+  // function handleClick() { //com prop drilling
+  //   props.setState(prevState => {
+  //     return {
+  //       ...prevState,
+  //       config: {
+  //         ...prevState.config,
+  //         workTime: 34,
+  //       },
+  //       formattedSecondsRemaining: "22:35",
+  //     };
+  //   });
+  // }
+
   function handleClick() {
-    props.setState(prevState => {
+    setState(prevState => {
       return {
         ...prevState,
         config: {
           ...prevState.config,
           workTime: 34,
         },
-        formattedSecondsRemaining: "22:30",
+        formattedSecondsRemaining: "22:21",
       };
     });
   }
