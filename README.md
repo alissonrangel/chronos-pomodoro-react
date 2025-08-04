@@ -168,3 +168,9 @@ export default tseslint.config([
 
 - Parei no início da aula 50. Capturando o evento submit do formulário (onSubmit
   com preventDefault)
+
+## Conceitos
+
+- Component do React: é uma função que retorna JSX
+- SPA - Single Page Application: pois só tem um arquivo html que renderiza toda
+  a aplicação
