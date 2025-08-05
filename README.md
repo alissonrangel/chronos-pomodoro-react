@@ -166,8 +166,7 @@ export default tseslint.config([
 
 ## Paradas
 
-- Parei no início da aula 50. Capturando o evento submit do formulário (onSubmit
-  com preventDefault)
+- Parei no início da aula 52. useRef + Ref ...
 
 ## Conceitos
 
