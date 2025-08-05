@@ -4,6 +4,7 @@ import { DefaultButton } from "../DefaultButton";
 import { DefaultInput } from "../DefaultInput";
 import type { HomeProps } from "../../pages/Home";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
+import { useState } from "react";
 
 type MainFormProps = {} & HomeProps;
 
@@ -11,6 +12,7 @@ export function MainForm(props: MainFormProps) {
   console.log("MainForm", props);
 
   const { setState } = useTaskContext();
+  const [taskName, setTaskName] = useState("");
 
   // function handleClick() { //com prop drilling
   //   props.setState(prevState => {
@@ -38,9 +40,14 @@ export function MainForm(props: MainFormProps) {
     });
   }
 
+  function handleCreateNewTask(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log("Deu Certo", taskName);
+  }
+
   return (
     <>
-      <form className="form" action="">
+      <form onSubmit={handleCreateNewTask} className="form" action="">
         <div>
           <button type="button" onClick={handleClick}>
             Clicar
@@ -53,6 +60,11 @@ export function MainForm(props: MainFormProps) {
           title="título"
           labelText="task"
           placeholder="Digite algo"
+          value={taskName}
+          onChange={e => {
+            setTaskName(e.target.value);
+          }}
+
           // disabled
           // defaultValue="Valor Preenchido"
         ></DefaultInput>

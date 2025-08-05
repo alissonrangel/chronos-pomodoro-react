@@ -4,10 +4,10 @@
   "editor.fontSize": 12,
   "debug.console.fontSize": 12,
   "terminal.integrated.fontSize": 12,
-  "editor.glyphMargin": false,
-  "workbench.activityBar.location": "hidden",
+  "editor.glyphMargin": true,
+  "workbench.activityBar.location": "default",
   "editor.lineNumbers": "on",
-  "files.eol": "\n", // Final de linha sempre será LF
+  "files.eol": "\n", // Fl de linha sempre será LF
   "editor.tabSize": 2,
   "explorer.compactFolders": false,
 
